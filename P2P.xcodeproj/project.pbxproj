@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		671472C6287677FD00C5E0B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671472C5287677FD00C5E0B1 /* AppDelegate.swift */; };
 		671472C8287677FD00C5E0B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671472C7287677FD00C5E0B1 /* SceneDelegate.swift */; };
-		671472CA287677FD00C5E0B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671472C9287677FD00C5E0B1 /* ViewController.swift */; };
 		671472CD287677FD00C5E0B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 671472CB287677FD00C5E0B1 /* Main.storyboard */; };
 		671472CF287677FE00C5E0B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 671472CE287677FE00C5E0B1 /* Assets.xcassets */; };
 		671472D2287677FE00C5E0B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 671472D0287677FE00C5E0B1 /* LaunchScreen.storyboard */; };
@@ -17,6 +16,13 @@
 		671472E7287677FE00C5E0B1 /* P2PUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671472E6287677FE00C5E0B1 /* P2PUITests.swift */; };
 		671472E9287677FE00C5E0B1 /* P2PUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671472E8287677FE00C5E0B1 /* P2PUITestsLaunchTests.swift */; };
 		671472F6287678A500C5E0B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671472F5287678A500C5E0B1 /* LoginViewController.swift */; };
+		67B26E44287D44AE0008677B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B26E43287D44AE0008677B /* LoginViewModel.swift */; };
+		67B26E4C287E76880008677B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B26E4B287E76880008677B /* User.swift */; };
+		F22ACB27287ACC9800462276 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F22ACB26287ACC9800462276 /* SnapKit */; };
+		F23791C2287A7E4F00F58CC4 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = F23791C1287A7E4F00F58CC4 /* RxCocoa */; };
+		F23791C4287A7E4F00F58CC4 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = F23791C3287A7E4F00F58CC4 /* RxRelay */; };
+		F23791C6287A7E4F00F58CC4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F23791C5287A7E4F00F58CC4 /* RxSwift */; };
+		F23791C9287A7EAC00F58CC4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F23791C8287A7EAC00F58CC4 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +46,6 @@
 		671472C2287677FD00C5E0B1 /* P2P.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = P2P.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		671472C5287677FD00C5E0B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		671472C7287677FD00C5E0B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		671472C9287677FD00C5E0B1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		671472CC287677FD00C5E0B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		671472CE287677FE00C5E0B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		671472D1287677FE00C5E0B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +56,8 @@
 		671472E6287677FE00C5E0B1 /* P2PUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PUITests.swift; sourceTree = "<group>"; };
 		671472E8287677FE00C5E0B1 /* P2PUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		671472F5287678A500C5E0B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		67B26E43287D44AE0008677B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		67B26E4B287E76880008677B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +65,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F23791C6287A7E4F00F58CC4 /* RxSwift in Frameworks */,
+				F23791C9287A7EAC00F58CC4 /* SnapKit in Frameworks */,
+				F23791C4287A7E4F00F58CC4 /* RxRelay in Frameworks */,
+				F23791C2287A7E4F00F58CC4 /* RxCocoa in Frameworks */,
+				F22ACB27287ACC9800462276 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,14 +113,13 @@
 		671472C4287677FD00C5E0B1 /* P2P */ = {
 			isa = PBXGroup;
 			children = (
-				671472C5287677FD00C5E0B1 /* AppDelegate.swift */,
-				671472C7287677FD00C5E0B1 /* SceneDelegate.swift */,
-				671472C9287677FD00C5E0B1 /* ViewController.swift */,
-				671472CB287677FD00C5E0B1 /* Main.storyboard */,
-				671472CE287677FE00C5E0B1 /* Assets.xcassets */,
-				671472D0287677FE00C5E0B1 /* LaunchScreen.storyboard */,
-				671472D3287677FE00C5E0B1 /* Info.plist */,
-				671472F5287678A500C5E0B1 /* LoginViewController.swift */,
+				67B26E4D287E852F0008677B /* App */,
+				67B26E4E287E853C0008677B /* Model */,
+				67B26E4F287E85410008677B /* Repository */,
+				67B26E50287E854C0008677B /* Domain */,
+				67B26E51287E855D0008677B /* ViewModel */,
+				67B26E52287E856A0008677B /* View */,
+				67B26E53287E85710008677B /* Utils */,
 			);
 			path = P2P;
 			sourceTree = "<group>";
@@ -130,6 +141,72 @@
 			path = P2PUITests;
 			sourceTree = "<group>";
 		};
+		67B26E4D287E852F0008677B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				67B26E54287E859A0008677B /* Asset */,
+				671472C5287677FD00C5E0B1 /* AppDelegate.swift */,
+				671472C7287677FD00C5E0B1 /* SceneDelegate.swift */,
+				671472D3287677FE00C5E0B1 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		67B26E4E287E853C0008677B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				67B26E4B287E76880008677B /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		67B26E4F287E85410008677B /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		67B26E50287E854C0008677B /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		67B26E51287E855D0008677B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				67B26E43287D44AE0008677B /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		67B26E52287E856A0008677B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				671472F5287678A500C5E0B1 /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		67B26E53287E85710008677B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		67B26E54287E859A0008677B /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				671472CB287677FD00C5E0B1 /* Main.storyboard */,
+				671472D0287677FE00C5E0B1 /* LaunchScreen.storyboard */,
+				671472CE287677FE00C5E0B1 /* Assets.xcassets */,
+			);
+			path = Asset;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +223,13 @@
 			dependencies = (
 			);
 			name = P2P;
+			packageProductDependencies = (
+				F23791C1287A7E4F00F58CC4 /* RxCocoa */,
+				F23791C3287A7E4F00F58CC4 /* RxRelay */,
+				F23791C5287A7E4F00F58CC4 /* RxSwift */,
+				F23791C8287A7EAC00F58CC4 /* SnapKit */,
+				F22ACB26287ACC9800462276 /* SnapKit */,
+			);
 			productName = P2P;
 			productReference = 671472C2287677FD00C5E0B1 /* P2P.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +302,11 @@
 				Base,
 			);
 			mainGroup = 671472B9287677FD00C5E0B1;
+			packageReferences = (
+				F23791C0287A7E4F00F58CC4 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				F23791C7287A7EAC00F58CC4 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				F22ACB25287ACC9800462276 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 671472C3287677FD00C5E0B1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -262,8 +351,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				671472F6287678A500C5E0B1 /* LoginViewController.swift in Sources */,
-				671472CA287677FD00C5E0B1 /* ViewController.swift in Sources */,
 				671472C6287677FD00C5E0B1 /* AppDelegate.swift in Sources */,
+				67B26E4C287E76880008677B /* User.swift in Sources */,
+				67B26E44287D44AE0008677B /* LoginViewModel.swift in Sources */,
 				671472C8287677FD00C5E0B1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,7 +533,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 22F59WHQP8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = P2P/Info.plist;
+				INFOPLIST_FILE = P2P/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -471,7 +561,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 22F59WHQP8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = P2P/Info.plist;
+				INFOPLIST_FILE = P2P/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -606,6 +696,61 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F22ACB25287ACC9800462276 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		F23791C0287A7E4F00F58CC4 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		F23791C7287A7EAC00F58CC4 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F22ACB26287ACC9800462276 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F22ACB25287ACC9800462276 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		F23791C1287A7E4F00F58CC4 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F23791C0287A7E4F00F58CC4 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		F23791C3287A7E4F00F58CC4 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F23791C0287A7E4F00F58CC4 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		F23791C5287A7E4F00F58CC4 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F23791C0287A7E4F00F58CC4 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		F23791C8287A7EAC00F58CC4 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F23791C7287A7EAC00F58CC4 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 671472BA287677FD00C5E0B1 /* Project object */;
 }
