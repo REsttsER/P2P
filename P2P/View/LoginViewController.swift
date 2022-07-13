@@ -7,9 +7,17 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class LoginViewController: UIViewController {
-
+    
+    let disposeBag = DisposeBag()
+    let viewModel = LoginViewModel()
+    
+    let userEmail = "aa@test.com"
+    let userPassword = "test123"
+    
     // MARK: - Properties
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -19,7 +27,7 @@ class LoginViewController: UIViewController {
         label.text = "P2P"
         return label
     }()
-
+    
     private lazy var emailView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 15
@@ -27,13 +35,13 @@ class LoginViewController: UIViewController {
         view.layer.borderColor = UIColor.lightGray.cgColor
         return view
     }()
-
+    
     private lazy var emailTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "이메일을 입력해주세요"
         return textField
     }()
-
+    
     private lazy var passwordView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 15
@@ -41,14 +49,14 @@ class LoginViewController: UIViewController {
         view.layer.borderColor = UIColor.lightGray.cgColor
         return view
     }()
-
+    
     private lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "비밀번호를 입력해주세요"
         textField.isSecureTextEntry = true
         return textField
     }()
-
+    
     private lazy var loginButton: UIButton = {
         let button = UIButton()
         button.setTitle("Login", for: .normal)
@@ -58,15 +66,16 @@ class LoginViewController: UIViewController {
         button.layer.cornerRadius = 15
         return button
     }()
-
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-
+        
         configureUI()
+        bindViewModel()
     }
-
+    
     // MARK: - Helpers
     func configureUI() {
         view.addSubview(titleLabel)
@@ -74,7 +83,7 @@ class LoginViewController: UIViewController {
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(150)
             $0.centerX.equalToSuperview()
         }
-
+        
         view.addSubview(emailView)
         emailView.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(20)
@@ -82,14 +91,14 @@ class LoginViewController: UIViewController {
             $0.trailing.equalToSuperview().offset(-40)
             $0.height.equalTo(50)
         }
-
+        
         emailView.addSubview(emailTextField)
         emailTextField.snp.makeConstraints {
             $0.top.bottom.equalToSuperview()
             $0.leading.equalToSuperview().offset(10)
             $0.trailing.equalToSuperview().offset(-10)
         }
-
+        
         view.addSubview(passwordView)
         passwordView.snp.makeConstraints {
             $0.top.equalTo(emailView.snp.bottom).offset(10)
@@ -97,19 +106,56 @@ class LoginViewController: UIViewController {
             $0.trailing.equalTo(emailView.snp.trailing)
             $0.height.equalTo(50)
         }
-
+        
         passwordView.addSubview(passwordTextField)
         passwordTextField.snp.makeConstraints {
             $0.top.bottom.equalToSuperview()
             $0.leading.equalToSuperview().offset(10)
             $0.trailing.equalToSuperview().offset(-10)
         }
-
+        
         view.addSubview(loginButton)
         loginButton.snp.makeConstraints {
             $0.top.equalTo(passwordView.snp.bottom).offset(50)
             $0.leading.trailing.equalTo(emailView)
         }
     }
-
+    
+    func bindViewModel() {
+        emailTextField.rx.text
+            .orEmpty
+            .bind(to: viewModel.emailObserver)
+            .disposed(by: disposeBag)
+        
+        passwordTextField.rx.text
+            .orEmpty
+            .bind(to: viewModel.passwordObserver)
+            .disposed(by: disposeBag)
+        
+        viewModel.isValid
+            .bind(to: loginButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        viewModel.isValid
+            .map { $0 ? 1 : 0.3 }
+            .bind(to: loginButton.rx.alpha)
+            .disposed(by: disposeBag)
+        
+        loginButton.rx.tap.subscribe(
+            onNext: { [weak self] _ in
+                if self?.userEmail == self?.viewModel.emailObserver.value &&
+                    self?.userPassword == self?.viewModel.passwordObserver.value {
+                    let alert = UIAlertController(title: "로그인 성공", message: "환영합니다", preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "확인", style: .default)
+                    alert.addAction(ok)
+                    self?.present(alert, animated: true, completion: nil)
+                } else {
+                    let alert = UIAlertController(title: "로그인 실패", message: "아이디 혹은 비밀번호를 다시 확인해주세요", preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "확인", style: .default)
+                    alert.addAction(ok)
+                    self?.present(alert, animated: true, completion: nil)
+                }
+            }
+        ).disposed(by: disposeBag)
+    }
 }
