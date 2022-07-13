@@ -75,7 +75,7 @@ class LoginViewController: UIViewController {
            button.backgroundColor = #colorLiteral(red: 0.6, green: 0.8078431373, blue: 0.9803921569, alpha: 1)
            button.layer.cornerRadius = 15
            return button
-       }()
+    }()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
