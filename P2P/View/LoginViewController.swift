@@ -67,6 +67,16 @@ class LoginViewController: UIViewController {
         return button
     }()
     
+    private lazy var signUpButton: UIButton = {
+           let button = UIButton()
+           button.setTitle("회원가입", for: .normal)
+           button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+           button.titleLabel?.textColor = .white
+           button.backgroundColor = #colorLiteral(red: 0.6, green: 0.8078431373, blue: 0.9803921569, alpha: 1)
+           button.layer.cornerRadius = 15
+           return button
+       }()
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
