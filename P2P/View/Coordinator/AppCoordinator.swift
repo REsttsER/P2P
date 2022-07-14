@@ -32,8 +32,9 @@ class AppCoordinator: Coordinator {
     }
 }
 
-// MARK: - Login
-extension AppCoordinator: LoginCoordinatorDelegate {
+// MARK: - showViewController
+
+extension AppCoordinator {
     private func showLoginViewController() {
         let coordinator = LoginCoordinator(navigationController: self.navigationController)
         coordinator.delegate = self
@@ -41,14 +42,6 @@ extension AppCoordinator: LoginCoordinatorDelegate {
         self.childCoordinators.append(coordinator)
     }
     
-    func didLoggedIn(_ coordinator: LoginCoordinator) {
-        self.childCoordinators = self.childCoordinators.filter { $0 !== coordinator }
-        self.showCargoListViewController()
-    }
-}
-
-// MARK: - CargoList
-extension AppCoordinator: CargoListCoordinatorDelegate {
     private func showCargoListViewController() {
         let coordinator = CargoListCoordinator(navigationController: self.navigationController)
         coordinator.delegate = self
@@ -56,8 +49,35 @@ extension AppCoordinator: CargoListCoordinatorDelegate {
         self.childCoordinators.append(coordinator)
     }
     
+    private func showSignUpViewController() {
+        let coordinator = SignUpCoordinator(navigationController: self.navigationController)
+        coordinator.delegate = self
+        coordinator.start()
+        self.childCoordinators.append(coordinator)
+    }
+}
+
+// MARK: - Login
+extension AppCoordinator: LoginCoordinatorDelegate {
+    func didLoggedIn(_ coordinator: LoginCoordinator) {
+        self.childCoordinators = self.childCoordinators.filter { $0 !== coordinator }
+        self.showCargoListViewController()
+    }
+    
+    func didSignedUp(_ coordinator: LoginCoordinator) {
+        self.childCoordinators = self.childCoordinators.filter { $0 !== coordinator }
+        self.showSignUpViewController()
+    }
+}
+
+// MARK: - CargoList
+extension AppCoordinator: CargoListCoordinatorDelegate {
     func didLoggedOut(_ coordinator: CargoListCoordinator) {
         self.childCoordinators = self.childCoordinators.filter { $0 !== coordinator }
         self.showLoginViewController()
     }
+}
+
+// MARK: - SignUp
+extension AppCoordinator: SignUpCoordinatorDelegate {
 }

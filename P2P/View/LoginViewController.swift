@@ -12,6 +12,7 @@ import RxCocoa
 
 protocol LoginViewControllerDelegate {
     func login()
+    func signup()
 }
 
 class LoginViewController: UIViewController {
@@ -137,6 +138,12 @@ class LoginViewController: UIViewController {
             $0.top.equalTo(passwordView.snp.bottom).offset(50)
             $0.leading.trailing.equalTo(emailView)
         }
+        
+        view.addSubview(signUpButton)
+        signUpButton.snp.makeConstraints {
+            $0.top.equalTo(loginButton.snp.bottom).offset(10)
+            $0.leading.trailing.equalTo(emailView)
+        }
     }
     
     func bindViewModel() {
@@ -170,6 +177,12 @@ class LoginViewController: UIViewController {
                     alert.addAction(ok)
                     self?.present(alert, animated: true, completion: nil)
                 }
+            }
+        ).disposed(by: disposeBag)
+        
+        signUpButton.rx.tap.subscribe(
+            onNext: { [weak self] _ in
+                self?.delegate?.signup()
             }
         ).disposed(by: disposeBag)
     }

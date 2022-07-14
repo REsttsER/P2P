@@ -9,6 +9,7 @@ import UIKit
 
 protocol LoginCoordinatorDelegate {
     func didLoggedIn (_ coordinator: LoginCoordinator)
+    func didSignedUp (_ coordinator: LoginCoordinator)
 }
 
 class LoginCoordinator: Coordinator, LoginViewControllerDelegate{
@@ -32,5 +33,9 @@ class LoginCoordinator: Coordinator, LoginViewControllerDelegate{
     
     func login() {
         self.delegate?.didLoggedIn(self)
+    }
+    
+    func signup() {
+        self.delegate?.didSignedUp(self)
     }
 }

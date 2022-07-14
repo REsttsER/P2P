@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6711671D287FA63600355970 /* CargoListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6711671C287FA63600355970 /* CargoListCoordinator.swift */; };
+		6711671F287FCD8500355970 /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6711671E287FCD8500355970 /* SignUpCoordinator.swift */; };
 		671472C6287677FD00C5E0B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671472C5287677FD00C5E0B1 /* AppDelegate.swift */; };
 		671472C8287677FD00C5E0B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671472C7287677FD00C5E0B1 /* SceneDelegate.swift */; };
 		671472CD287677FD00C5E0B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 671472CB287677FD00C5E0B1 /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		6711671C287FA63600355970 /* CargoListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargoListCoordinator.swift; sourceTree = "<group>"; };
+		6711671E287FCD8500355970 /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
 		671472C2287677FD00C5E0B1 /* P2P.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = P2P.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		671472C5287677FD00C5E0B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		671472C7287677FD00C5E0B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				672090FF287EAA60000D0D4E /* AppCoordinator.swift */,
 				67209104287EAD4A000D0D4E /* LoginCoordinator.swift */,
 				6711671C287FA63600355970 /* CargoListCoordinator.swift */,
+				6711671E287FCD8500355970 /* SignUpCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -207,8 +210,8 @@
 			children = (
 				672090FE287EAA50000D0D4E /* Coordinator */,
 				671472F5287678A500C5E0B1 /* LoginViewController.swift */,
-				672090FA287EA83D000D0D4E /* SignUpViewController.swift */,
 				672090FC287EA950000D0D4E /* CargoListViewController.swift */,
+				672090FA287EA83D000D0D4E /* SignUpViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				67B26E4C287E76880008677B /* User.swift in Sources */,
 				67209100287EAA60000D0D4E /* AppCoordinator.swift in Sources */,
 				67B26E44287D44AE0008677B /* LoginViewModel.swift in Sources */,
+				6711671F287FCD8500355970 /* SignUpCoordinator.swift in Sources */,
 				672090FD287EA950000D0D4E /* CargoListViewController.swift in Sources */,
 				671472C8287677FD00C5E0B1 /* SceneDelegate.swift in Sources */,
 				6711671D287FA63600355970 /* CargoListCoordinator.swift in Sources */,
