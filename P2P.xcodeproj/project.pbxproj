@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6711671D287FA63600355970 /* CargoListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6711671C287FA63600355970 /* CargoListCoordinator.swift */; };
 		671472C6287677FD00C5E0B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671472C5287677FD00C5E0B1 /* AppDelegate.swift */; };
 		671472C8287677FD00C5E0B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671472C7287677FD00C5E0B1 /* SceneDelegate.swift */; };
 		671472CD287677FD00C5E0B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 671472CB287677FD00C5E0B1 /* Main.storyboard */; };
@@ -18,6 +19,8 @@
 		671472F6287678A500C5E0B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671472F5287678A500C5E0B1 /* LoginViewController.swift */; };
 		672090FB287EA83D000D0D4E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672090FA287EA83D000D0D4E /* SignUpViewController.swift */; };
 		672090FD287EA950000D0D4E /* CargoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672090FC287EA950000D0D4E /* CargoListViewController.swift */; };
+		67209100287EAA60000D0D4E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672090FF287EAA60000D0D4E /* AppCoordinator.swift */; };
+		67209105287EAD4A000D0D4E /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67209104287EAD4A000D0D4E /* LoginCoordinator.swift */; };
 		67B26E44287D44AE0008677B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B26E43287D44AE0008677B /* LoginViewModel.swift */; };
 		67B26E4C287E76880008677B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B26E4B287E76880008677B /* User.swift */; };
 		F22ACB27287ACC9800462276 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F22ACB26287ACC9800462276 /* SnapKit */; };
@@ -45,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6711671C287FA63600355970 /* CargoListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargoListCoordinator.swift; sourceTree = "<group>"; };
 		671472C2287677FD00C5E0B1 /* P2P.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = P2P.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		671472C5287677FD00C5E0B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		671472C7287677FD00C5E0B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +64,8 @@
 		671472F5287678A500C5E0B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		672090FA287EA83D000D0D4E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		672090FC287EA950000D0D4E /* CargoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargoListViewController.swift; sourceTree = "<group>"; };
+		672090FF287EAA60000D0D4E /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		67209104287EAD4A000D0D4E /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		67B26E43287D44AE0008677B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		67B26E4B287E76880008677B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +151,16 @@
 			path = P2PUITests;
 			sourceTree = "<group>";
 		};
+		672090FE287EAA50000D0D4E /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				672090FF287EAA60000D0D4E /* AppCoordinator.swift */,
+				67209104287EAD4A000D0D4E /* LoginCoordinator.swift */,
+				6711671C287FA63600355970 /* CargoListCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		67B26E4D287E852F0008677B /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +205,7 @@
 		67B26E52287E856A0008677B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				672090FE287EAA50000D0D4E /* Coordinator */,
 				671472F5287678A500C5E0B1 /* LoginViewController.swift */,
 				672090FA287EA83D000D0D4E /* SignUpViewController.swift */,
 				672090FC287EA950000D0D4E /* CargoListViewController.swift */,
@@ -358,11 +375,14 @@
 			files = (
 				672090FB287EA83D000D0D4E /* SignUpViewController.swift in Sources */,
 				671472F6287678A500C5E0B1 /* LoginViewController.swift in Sources */,
+				67209105287EAD4A000D0D4E /* LoginCoordinator.swift in Sources */,
 				671472C6287677FD00C5E0B1 /* AppDelegate.swift in Sources */,
 				67B26E4C287E76880008677B /* User.swift in Sources */,
+				67209100287EAA60000D0D4E /* AppCoordinator.swift in Sources */,
 				67B26E44287D44AE0008677B /* LoginViewModel.swift in Sources */,
 				672090FD287EA950000D0D4E /* CargoListViewController.swift in Sources */,
 				671472C8287677FD00C5E0B1 /* SceneDelegate.swift in Sources */,
+				6711671D287FA63600355970 /* CargoListCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
