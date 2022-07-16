@@ -16,7 +16,6 @@
 		671472E7287677FE00C5E0B1 /* P2PUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671472E6287677FE00C5E0B1 /* P2PUITests.swift */; };
 		671472E9287677FE00C5E0B1 /* P2PUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671472E8287677FE00C5E0B1 /* P2PUITestsLaunchTests.swift */; };
 		671472F6287678A500C5E0B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671472F5287678A500C5E0B1 /* LoginViewController.swift */; };
-		672090FB287EA83D000D0D4E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672090FA287EA83D000D0D4E /* SignUpViewController.swift */; };
 		672090FD287EA950000D0D4E /* CargoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672090FC287EA950000D0D4E /* CargoListViewController.swift */; };
 		67B26E44287D44AE0008677B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B26E43287D44AE0008677B /* LoginViewModel.swift */; };
 		67B26E4C287E76880008677B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B26E4B287E76880008677B /* User.swift */; };
@@ -59,7 +58,6 @@
 		671472E6287677FE00C5E0B1 /* P2PUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PUITests.swift; sourceTree = "<group>"; };
 		671472E8287677FE00C5E0B1 /* P2PUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		671472F5287678A500C5E0B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		672090FA287EA83D000D0D4E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		672090FC287EA950000D0D4E /* CargoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargoListViewController.swift; sourceTree = "<group>"; };
 		67B26E43287D44AE0008677B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		67B26E4B287E76880008677B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -193,7 +191,6 @@
 			children = (
 				671472F5287678A500C5E0B1 /* LoginViewController.swift */,
 				F22ACB282882467000462276 /* SignUpViewController.swift */,
-				672090FA287EA83D000D0D4E /* SignUpViewController.swift */,
 				672090FC287EA950000D0D4E /* CargoListViewController.swift */,
 			);
 			path = View;
@@ -360,7 +357,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F22ACB292882467000462276 /* SignUpViewController.swift in Sources */,
-				672090FB287EA83D000D0D4E /* SignUpViewController.swift in Sources */,
 				671472F6287678A500C5E0B1 /* LoginViewController.swift in Sources */,
 				671472C6287677FD00C5E0B1 /* AppDelegate.swift in Sources */,
 				67B26E4C287E76880008677B /* User.swift in Sources */,
