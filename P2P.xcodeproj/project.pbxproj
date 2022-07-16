@@ -19,6 +19,7 @@
 		67B26E44287D44AE0008677B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B26E43287D44AE0008677B /* LoginViewModel.swift */; };
 		67B26E4C287E76880008677B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B26E4B287E76880008677B /* User.swift */; };
 		F22ACB27287ACC9800462276 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F22ACB26287ACC9800462276 /* SnapKit */; };
+		F22ACB292882467000462276 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22ACB282882467000462276 /* SignUpViewController.swift */; };
 		F23791C2287A7E4F00F58CC4 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = F23791C1287A7E4F00F58CC4 /* RxCocoa */; };
 		F23791C4287A7E4F00F58CC4 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = F23791C3287A7E4F00F58CC4 /* RxRelay */; };
 		F23791C6287A7E4F00F58CC4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F23791C5287A7E4F00F58CC4 /* RxSwift */; };
@@ -58,6 +59,7 @@
 		671472F5287678A500C5E0B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		67B26E43287D44AE0008677B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		67B26E4B287E76880008677B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F22ACB282882467000462276 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				671472F5287678A500C5E0B1 /* LoginViewController.swift */,
+				F22ACB282882467000462276 /* SignUpViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F22ACB292882467000462276 /* SignUpViewController.swift in Sources */,
 				671472F6287678A500C5E0B1 /* LoginViewController.swift in Sources */,
 				671472C6287677FD00C5E0B1 /* AppDelegate.swift in Sources */,
 				67B26E4C287E76880008677B /* User.swift in Sources */,
