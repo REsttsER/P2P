@@ -10,7 +10,13 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
+protocol LoginViewControllerDelegate {
+    func login()
+    func signup()
+}
+
 class LoginViewController: UIViewController {
+    var delegate: LoginViewControllerDelegate?
     
     let disposeBag = DisposeBag()
     let viewModel = LoginViewModel()
@@ -68,22 +74,25 @@ class LoginViewController: UIViewController {
     }()
     
     private lazy var signUpButton: UIButton = {
-           let button = UIButton()
-           button.setTitle("회원가입", for: .normal)
-           button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-           button.titleLabel?.textColor = .white
-           button.backgroundColor = #colorLiteral(red: 0.6, green: 0.8078431373, blue: 0.9803921569, alpha: 1)
-           button.layer.cornerRadius = 15
-           return button
+        let button = UIButton()
+        button.setTitle("회원가입", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.titleLabel?.textColor = .white
+        button.backgroundColor = #colorLiteral(red: 0.6, green: 0.8078431373, blue: 0.9803921569, alpha: 1)
+        button.layer.cornerRadius = 15
+        return button
     }()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         
         configureUI()
         bindViewModel()
+    }
+    
+    deinit {
+        print("- \(type(of: self)) deinit")
     }
     
     // MARK: - Helpers
@@ -129,6 +138,12 @@ class LoginViewController: UIViewController {
             $0.top.equalTo(passwordView.snp.bottom).offset(50)
             $0.leading.trailing.equalTo(emailView)
         }
+        
+        view.addSubview(signUpButton)
+        signUpButton.snp.makeConstraints {
+            $0.top.equalTo(loginButton.snp.bottom).offset(10)
+            $0.leading.trailing.equalTo(emailView)
+        }
     }
     
     func bindViewModel() {
@@ -155,16 +170,19 @@ class LoginViewController: UIViewController {
             onNext: { [weak self] _ in
                 if self?.userEmail == self?.viewModel.emailObserver.value &&
                     self?.userPassword == self?.viewModel.passwordObserver.value {
-                    let alert = UIAlertController(title: "로그인 성공", message: "환영합니다", preferredStyle: .alert)
-                    let ok = UIAlertAction(title: "확인", style: .default)
-                    alert.addAction(ok)
-                    self?.present(alert, animated: true, completion: nil)
+                        self?.delegate?.login()
                 } else {
                     let alert = UIAlertController(title: "로그인 실패", message: "아이디 혹은 비밀번호를 다시 확인해주세요", preferredStyle: .alert)
                     let ok = UIAlertAction(title: "확인", style: .default)
                     alert.addAction(ok)
                     self?.present(alert, animated: true, completion: nil)
                 }
+            }
+        ).disposed(by: disposeBag)
+        
+        signUpButton.rx.tap.subscribe(
+            onNext: { [weak self] _ in
+                self?.delegate?.signup()
             }
         ).disposed(by: disposeBag)
     }

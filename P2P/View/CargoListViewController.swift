@@ -9,7 +9,13 @@ import Foundation
 import UIKit
 import SnapKit
 
+protocol CargoListViewControllerDelegate {
+    func logout()
+}
+
 class CargoListViewController: UIViewController {
+    
+    var delegate: CargoListViewControllerDelegate?
     
     private lazy var label: UILabel = {
         let label = UILabel()
@@ -19,9 +25,22 @@ class CargoListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let item = UIBarButtonItem(title: "로그아웃", style: .plain, target: self, action: #selector(logoutButtonDidTap))
+        self.navigationItem.rightBarButtonItem = item
         configureUI()
     }
     
+    deinit {
+        print("- \(type(of: self)) deinit")
+    }
+    
+    @objc
+    func logoutButtonDidTap() {
+        self.delegate?.logout()
+    }
+}
+
+extension CargoListViewController {
     func configureUI() {
         view.addSubview(label)
         label.snp.makeConstraints {

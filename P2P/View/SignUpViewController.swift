@@ -9,7 +9,13 @@ import Foundation
 import UIKit
 import SnapKit
 
+protocol SignUpViewControllerDelegate {
+    
+}
+
 class SignUpViewController: UIViewController {
+    
+    var delegate: SignUpViewControllerDelegate?
     
     private lazy var emailLabel: UILabel = {
         let label = UILabel()
@@ -146,7 +152,9 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
     }
-    
+}
+
+extension SignUpViewController {
     func configureUI() {
         // 이메일(아이디)
         view.addSubview(emailLabel)
@@ -270,7 +278,6 @@ class SignUpViewController: UIViewController {
                 $0.top.bottom.equalToSuperview()
                 $0.leading.equalToSuperview().offset(10)
                 $0.trailing.equalToSuperview().offset(-10)
-            }
-        
+        }
     }
 }
