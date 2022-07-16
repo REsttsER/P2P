@@ -159,7 +159,7 @@ extension SignUpViewController {
         // 이메일(아이디)
         view.addSubview(emailLabel)
         emailLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(50)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             $0.leading.equalToSuperview().offset(40)
         }
         
@@ -186,9 +186,10 @@ extension SignUpViewController {
         }
         view.addSubview(passwordView)
         passwordView.snp.makeConstraints {
-            $0.top.equalTo(emailView.snp.bottom).offset(10)
+            $0.top.equalTo(passwordLabel.snp.bottom).offset(10)
             $0.leading.equalTo(emailView.snp.leading)
             $0.trailing.equalTo(emailView.snp.trailing)
+            $0.height.equalTo(50)
         }
         passwordView.addSubview(passwordTextField)
         passwordTextField.snp.makeConstraints {
@@ -206,10 +207,12 @@ extension SignUpViewController {
         
         view.addSubview(confirmPasswordView)
         confirmPasswordView.snp.makeConstraints {
-            $0.top.equalTo(passwordView.snp.bottom).offset(10)
+            $0.top.equalTo(confirmPasswordLabel.snp.bottom).offset(10)
             $0.leading.equalTo(emailView.snp.leading)
             $0.trailing.equalTo(emailView.snp.trailing)
+            $0.height.equalTo(50)
         }
+        
         view.addSubview(confirmPasswordView)
         confirmPasswordView.addSubview(confirmPasswordTextField)
         confirmPasswordTextField.snp.makeConstraints {
@@ -227,10 +230,12 @@ extension SignUpViewController {
         
         view.addSubview(nameView)
         nameView.snp.makeConstraints {
-            $0.top.equalTo(confirmPasswordView.snp.bottom).offset(10)
+            $0.top.equalTo(nameLabel.snp.bottom).offset(10)
             $0.leading.equalTo(emailView.snp.leading)
             $0.trailing.equalTo(emailView.snp.trailing)
+            $0.height.equalTo(50)
         }
+        
         nameView.addSubview(nameTextField)
         nameTextField.snp.makeConstraints {
                 $0.top.bottom.equalToSuperview()
@@ -247,9 +252,10 @@ extension SignUpViewController {
         
         view.addSubview(phoneNumberView)
         phoneNumberView.snp.makeConstraints {
-            $0.top.equalTo(nameView.snp.bottom).offset(10)
+            $0.top.equalTo(phoneNumberLabel.snp.bottom).offset(10)
             $0.leading.equalTo(emailView.snp.leading)
             $0.trailing.equalTo(emailView.snp.trailing)
+            $0.height.equalTo(50)
         }
         
         phoneNumberView.addSubview(phoneNumberTextField)
@@ -268,9 +274,10 @@ extension SignUpViewController {
         
         view.addSubview(accountNumberView)
         accountNumberView.snp.makeConstraints {
-            $0.top.equalTo(phoneNumberView.snp.bottom).offset(10)
+            $0.top.equalTo(accountNumberLabel.snp.bottom).offset(10)
             $0.leading.equalTo(emailView.snp.leading)
             $0.trailing.equalTo(emailView.snp.trailing)
+            $0.height.equalTo(50)
         }
         
         accountNumberView.addSubview(accountNumberTextField)
