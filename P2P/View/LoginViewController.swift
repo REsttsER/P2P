@@ -9,6 +9,8 @@ import UIKit
 import SnapKit
 import RxSwift
 import RxCocoa
+import KakaoSDKAuth
+import KakaoSDKUser
 
 class LoginViewController: UIViewController {
     
@@ -67,6 +69,16 @@ class LoginViewController: UIViewController {
         return button
     }()
     
+    private lazy var kakaoLoginButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("카카오톡으로 로그인", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
+        button.titleLabel?.textColor = .white
+        button.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        button.layer.cornerRadius = 15
+        return button
+    }()
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,6 +131,11 @@ class LoginViewController: UIViewController {
             $0.top.equalTo(passwordView.snp.bottom).offset(50)
             $0.leading.trailing.equalTo(emailView)
         }
+        view.addSubview(kakaoLoginButton)
+        kakaoLoginButton.snp.makeConstraints {
+            $0.top.equalTo(loginButton.snp.bottom).offset(10)
+            $0.leading.trailing.equalTo(emailView)
+        }
     }
     
     func bindViewModel() {
@@ -154,6 +171,25 @@ class LoginViewController: UIViewController {
                     let ok = UIAlertAction(title: "확인", style: .default)
                     alert.addAction(ok)
                     self?.present(alert, animated: true, completion: nil)
+                }
+            }
+        ).disposed(by: disposeBag)
+        
+        kakaoLoginButton.rx.tap.subscribe(
+            onNext: { [weak self] _ in
+                // 카카오톡 설치 여부 확인
+                if (UserApi.isKakaoTalkLoginAvailable()) {
+                    UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                        if let error = error {
+                            print("버튼 눌렀을 때 난 에러 \(error)")
+                        }
+                        else {
+                            print("loginWithKakaoTalk() success.")
+
+                            //do something
+                            _ = oauthToken
+                        }
+                    }
                 }
             }
         ).disposed(by: disposeBag)

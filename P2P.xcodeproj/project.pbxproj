@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6711672E2884EE1400355970 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 6711672D2884EE1400355970 /* KakaoSDK */; };
 		671472C6287677FD00C5E0B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671472C5287677FD00C5E0B1 /* AppDelegate.swift */; };
 		671472C8287677FD00C5E0B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671472C7287677FD00C5E0B1 /* SceneDelegate.swift */; };
 		671472CD287677FD00C5E0B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 671472CB287677FD00C5E0B1 /* Main.storyboard */; };
@@ -70,6 +71,7 @@
 				F23791C4287A7E4F00F58CC4 /* RxRelay in Frameworks */,
 				F23791C2287A7E4F00F58CC4 /* RxCocoa in Frameworks */,
 				F22ACB27287ACC9800462276 /* SnapKit in Frameworks */,
+				6711672E2884EE1400355970 /* KakaoSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +231,7 @@
 				F23791C5287A7E4F00F58CC4 /* RxSwift */,
 				F23791C8287A7EAC00F58CC4 /* SnapKit */,
 				F22ACB26287ACC9800462276 /* SnapKit */,
+				6711672D2884EE1400355970 /* KakaoSDK */,
 			);
 			productName = P2P;
 			productReference = 671472C2287677FD00C5E0B1 /* P2P.app */;
@@ -306,6 +309,7 @@
 				F23791C0287A7E4F00F58CC4 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				F23791C7287A7EAC00F58CC4 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				F22ACB25287ACC9800462276 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				6711672C2884EE1400355970 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
 			);
 			productRefGroup = 671472C3287677FD00C5E0B1 /* Products */;
 			projectDirPath = "";
@@ -698,6 +702,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		6711672C2884EE1400355970 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		F22ACB25287ACC9800462276 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -725,6 +737,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		6711672D2884EE1400355970 /* KakaoSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6711672C2884EE1400355970 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDK;
+		};
 		F22ACB26287ACC9800462276 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F22ACB25287ACC9800462276 /* XCRemoteSwiftPackageReference "SnapKit" */;
