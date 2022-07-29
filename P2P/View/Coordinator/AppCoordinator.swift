@@ -30,27 +30,33 @@ class AppCoordinator: Coordinator {
             self.showLoginViewController()
         }
     }
+    
+    func showTabBarFlow() {
+        let tabBarCoordinator = TabBarCoordinator(self.navigationController)
+        tabBarCoordinator.start()
+        childCoordinators.append(tabBarCoordinator)
+    }
 }
 
 // MARK: - showViewController
 
 extension AppCoordinator {
     private func showLoginViewController() {
-        let coordinator = LoginCoordinator(navigationController: self.navigationController)
+        let coordinator = LoginCoordinator(self.navigationController)
         coordinator.delegate = self
         coordinator.start()
         self.childCoordinators.append(coordinator)
     }
     
     private func showCargoListViewController() {
-        let coordinator = CargoListCoordinator(navigationController: self.navigationController)
+        let coordinator = CargoListCoordinator(self.navigationController)
         coordinator.delegate = self
         coordinator.start()
         self.childCoordinators.append(coordinator)
     }
     
     private func showSignUpViewController() {
-        let coordinator = SignUpCoordinator(navigationController: self.navigationController)
+        let coordinator = SignUpCoordinator(self.navigationController)
         coordinator.delegate = self
         coordinator.start()
         self.childCoordinators.append(coordinator)
